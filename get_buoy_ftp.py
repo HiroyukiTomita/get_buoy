@@ -2,8 +2,8 @@ def get(buoy_category, file):
     from ftplib import FTP
     if (buoy_category == "TAO"):
       site = 'ftp.pmel.noaa.gov'
-      user = 'taopmelftp'
-      key  = 'G10b@LCh@Ng3'
+      user = 'your_user_id'
+      key  = 'your_pass'
       dir  = '/high_resolution/ascii/hr'
     ftps = FTP(site,user,key)
     ftps.cwd(dir)
