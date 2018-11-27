@@ -22,3 +22,8 @@ gets surface buoy data for QCS
 - INFO: http://www.ndbc.noaa.gov/historical_data.shtml  
 - WEB: http://www.ndbc.noaa.gov/data/historical/stdmet/  
 - FILE: ex. 41013h2015.txt.gz  
+
+3) NOAA PMEL: Ocean Climate Stations: ARC, KEO, Papa
+- INFO: https://www.pmel.noaa.gov/ocs/
+- FTP: ftp.pmel.noaa.gov
+- FILE: ex. w32n145e_hr.ascii, w50n145w_hr.ascii 
