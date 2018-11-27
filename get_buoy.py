@@ -58,14 +58,15 @@ if len(sys.argv) == 4:
 #-------------------------------------------------- 
 # set Original file
 #-------------------------------------------------- 
-buoy_org_fn = get_buoy_misc.org_fn(buoy_category, buoy_id, buoy_year)
-print (buoy_org_fn)
+#buoy_org_fn = get_buoy_misc.org_fn(buoy_category, buoy_id, buoy_year)
+#print (buoy_org_fn)
 
 #-------------------------------------------------- 
-# FTP
+# Download buoy data file
 #-------------------------------------------------- 
-if buoy_category == "TAO":
- get_buoy_ftp.get(buoy_category, buoy_org_fn)
+if (buoy_category == "TAO") or (buoy_category == "TRITON") or (buoy_category == "PIRATA") or (buoy_category == "RAMMA"):
+ get_buoy_ftp.get(buoy_category, buoy_id, buoy_year)
 elif buoy_category == "NDBC":
- get_buoy_wget.get(buoy_category, buoy_org_fn)
-
+ get_buoy_wget.get(buoy_category, buoy_id, buoy_year)
+elif buoy_category == "OCS":
+ get_buoy_wget.get(buoy_category, buoy_id, buoy_year)

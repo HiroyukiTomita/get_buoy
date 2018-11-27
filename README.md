@@ -14,7 +14,7 @@ gets surface buoy data for QCS
 - OTHERS
 
 ### Data Provider Info.
-1) NOAA PMEL: TAO/TRITON/PIRATA  
+1) NOAA PMEL: TAO/TRITON/PIRATA/RAMA  
 - FTP:  ftp.pmel.noaa.gov 
 - FILE: ex. met0n110w_hr.ascii  
   

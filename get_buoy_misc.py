@@ -14,5 +14,8 @@ def org_fn(buoy_category, buoy_id, year):
    buoy_org_fn = 'met' + buoy_id + '_hr.ascii'
  if (buoy_category == 'NDBC'):
    buoy_org_fn = buoy_id + 'h'+ year + '.txt'
+ if (buoy_category == 'OCS'):
+   buoy_org_fn = '-'
+ 
  return(buoy_org_fn)
  
