@@ -11,6 +11,7 @@ gets surface buoy data for QCS
 - RAMMA 
 - PIRATA 
 - NDBC
+- OCS (ARC, KEO, Papa)
 - OTHERS
 
 ### Data Provider Info.
