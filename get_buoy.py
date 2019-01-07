@@ -3,6 +3,7 @@
 # get_buoy.py ---Buoy data download tool for QCS
 #
 # CHANGES:
+#    V1.0.2: 2019.01.07
 #    V1.0.1: 2018.11.27
 #    V1.0.0: 2016.12.01
 #-------------------------------------------------- 
@@ -17,16 +18,13 @@ import get_buoy_wget
 #-------------------------------------------------- 
 # SCRIPT SETUP
 #-------------------------------------------------- 
-version="V1.0.1"
+version="V1.0.2"
 buoy_category="TAO"
 buoy_id="0n110w"
 buoy_year=2015
 
 # Home directory
 get_buoy_home="../"
-
-# BUOY original data directory
-buoy_org_dir="../ORG/" + buoy_category + "/" 
 
 #-------------------------------------------------- 
 # INIT. 
@@ -55,6 +53,9 @@ buoy_id = arg2
 if len(sys.argv) == 4:
  buoy_year = arg3
 
+# BUOY original data directory
+buoy_org_dir="../ORG/" + buoy_category + "/" 
+
 #-------------------------------------------------- 
 # set Original file
 #-------------------------------------------------- 
@@ -65,8 +66,9 @@ if len(sys.argv) == 4:
 # Download buoy data file
 #-------------------------------------------------- 
 if (buoy_category == "TAO") or (buoy_category == "TRITON") or (buoy_category == "PIRATA") or (buoy_category == "RAMMA"):
- get_buoy_ftp.get(buoy_category, buoy_id, buoy_year)
+ get_buoy_ftp.get(buoy_category, buoy_id, buoy_year, buoy_org_dir)
 elif buoy_category == "NDBC":
- get_buoy_wget.get(buoy_category, buoy_id, buoy_year)
+ get_buoy_wget.get(buoy_category, buoy_id, buoy_year, buoy_org_dir)
 elif buoy_category == "OCS":
- get_buoy_wget.get(buoy_category, buoy_id, buoy_year)
+ get_buoy_wget.get(buoy_category, buoy_id, buoy_year, buoy_org_dir)
+
