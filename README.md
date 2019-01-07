@@ -2,7 +2,7 @@
 gets surface buoy data for QCS  
 
 ## USAGE 
-`get_buoy [buoyid]`
+`get_buoy [buoy_category] [buoyid] [year]`
 
 ## Memo 
 ### BUOY CATEGORY
