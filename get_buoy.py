@@ -52,7 +52,7 @@ buoy_category = arg2
 buoy_id = arg3
 
 # BUOY original data directory
-buoy_org_dir=opath + buoy_category + "/" 
+buoy_org_dir=opath + "/" + buoy_category + "/" 
 
 #-------------------------------------------------- 
 # set Original file
