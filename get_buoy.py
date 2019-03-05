@@ -3,6 +3,7 @@
 # get_buoy.py ---Buoy data download tool for QCS
 #
 # CHANGES:
+#    V1.0.3: 2019.03.05
 #    V1.0.2: 2019.01.07
 #    V1.0.1: 2018.11.27
 #    V1.0.0: 2016.12.01
@@ -18,13 +19,10 @@ import get_buoy_wget
 #-------------------------------------------------- 
 # SCRIPT SETUP
 #-------------------------------------------------- 
-version="V1.0.2"
+version="V1.0.3"
 buoy_category="TAO"
 buoy_id="0n110w"
 buoy_year=2015
-
-# Home directory
-get_buoy_home="../"
 
 #-------------------------------------------------- 
 # INIT. 
@@ -37,24 +35,24 @@ pid = os.getpid()
 if len(sys.argv) == 1:
  get_buoy_misc.usage()
  sys.exit()
-elif len(sys.argv) == 3:
- arg1 = sys.argv[1]
- arg2 = sys.argv[2]
- buoy_year = 9999
 elif len(sys.argv) == 4:
  arg1 = sys.argv[1]
  arg2 = sys.argv[2]
  arg3 = sys.argv[3]
- buoy_year = arg3
+ buoy_year = 9999
+elif len(sys.argv) == 5:
+ arg1 = sys.argv[1]
+ arg2 = sys.argv[2]
+ arg3 = sys.argv[3]
+ arg4 = sys.argv[4]
+ buoy_year = arg4
 
-buoy_category = arg1
-buoy_id = arg2
-
-if len(sys.argv) == 4:
- buoy_year = arg3
+opath = arg1
+buoy_category = arg2
+buoy_id = arg3
 
 # BUOY original data directory
-buoy_org_dir="../ORG/" + buoy_category + "/" 
+buoy_org_dir=opath + buoy_category + "/" 
 
 #-------------------------------------------------- 
 # set Original file
