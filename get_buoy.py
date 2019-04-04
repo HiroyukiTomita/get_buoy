@@ -63,8 +63,11 @@ buoy_org_dir=opath + "/" + buoy_category + "/"
 #-------------------------------------------------- 
 # Download buoy data file
 #-------------------------------------------------- 
-if (buoy_category == "TAO") or (buoy_category == "TRITON") or (buoy_category == "PIRATA") or (buoy_category == "RAMMA"):
+if buoy_category == "TAO" or buoy_category == "TRITON" or buoy_category == "PIRATA" or buoy_category == "RAMA" :
+ # get 10min data
+ get_buoy_ftp.get10m(buoy_category, buoy_id, buoy_year, buoy_org_dir)
  get_buoy_ftp.get(buoy_category, buoy_id, buoy_year, buoy_org_dir)
+ get_buoy_ftp.get_bp(buoy_category, buoy_id, buoy_year, buoy_org_dir)
 elif buoy_category == "NDBC":
  get_buoy_wget.get(buoy_category, buoy_id, buoy_year, buoy_org_dir)
 elif buoy_category == "OCS":

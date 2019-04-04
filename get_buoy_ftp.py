@@ -2,28 +2,81 @@ def get(buoy_category, buoy_id , buoy_year, buoy_org_dir):
     import os
     from ftplib import FTP
     import get_buoy_misc
-    if (buoy_category == "TAO"):
+    if (buoy_category == "TAO" or buoy_category == "TRITON" or buoy_category == "PIRATA" or buoy_category == "RAMA"):
       site = 'ftp.pmel.noaa.gov'
-      user = 'your_user_id'
-      key  = 'your_pass'
+      user = 'taopmelftp'
+      key  = 'G10b@LCh@Ng3'
       dir  = '/high_resolution/ascii/hr'
       file = get_buoy_misc.org_fn(buoy_category, buoy_id, buoy_year) 
+      file = file + '.gz'
     ftps = FTP(site,user,key)
     ftps.cwd(dir)
-#    ftps.retrlines('LIST') 
-    command='RETR '+file+'.gz'
-    f = open(file+'.gz', 'wb')
+    command='RETR '+file
+    f = open(file, 'wb')
     print(command)
     ftps.retrbinary(command,f.write)
     ftps.quit()
     f.close()
-
 # move
-    command1 = 'mv ' + file + '.gz ' + buoy_org_dir
-    command2 = 'gunzip ' + buoy_org_dir + file + '.gz'
-    os.system(command1)
-    os.system(command2)
+    command = 'mv ' + file  + ' ' + buoy_org_dir
+    os.system(command)
+    fileb,ext = os.path.splitext(file)
+    if (ext == ".gz"):
+     command = 'gunzip ' + buoy_org_dir + file
+     os.system(command)
 
- 
-    
- 
+def get_bp(buoy_category, buoy_id , buoy_year, buoy_org_dir):
+    import os
+    from ftplib import FTP
+    import get_buoy_misc
+    if (buoy_category == "TAO" or buoy_category == "TRITON" or buoy_category == "PIRATA" or buoy_category == "RAMA"):
+      site = 'ftp.pmel.noaa.gov'
+      user = 'taopmelftp'
+      key  = 'G10b@LCh@Ng3'
+      dir  = '/high_resolution/ascii/hr'
+      file = get_buoy_misc.org_bp_fn(buoy_category, buoy_id, buoy_year) 
+      file = file + '.gz'
+    ftps = FTP(site,user,key)
+    ftps.cwd(dir)
+    command='RETR '+file
+    f = open(file, 'wb')
+    print(command)
+    ftps.retrbinary(command,f.write)
+    ftps.quit()
+    f.close()
+# move
+    command = 'mv ' + file  + ' ' + buoy_org_dir
+    os.system(command)
+    fileb,ext = os.path.splitext(file)
+    if (ext == ".gz"):
+     command = 'gunzip ' + buoy_org_dir + file
+     os.system(command)
+
+
+def get10m(buoy_category, buoy_id , buoy_year, buoy_org_dir):
+    import os
+    from ftplib import FTP
+    import get_buoy_misc
+    if (buoy_category == "TAO" or buoy_category == "TRITON" or buoy_category == "PIRATA" or buoy_category == "RAMA"):
+      site = 'ftp.pmel.noaa.gov'
+      user = 'taopmelftp'
+      key  = 'G10b@LCh@Ng3'
+      dir  = '/high_resolution/ascii/10m'
+      file = get_buoy_misc.org_fn10m(buoy_category, buoy_id, buoy_year) 
+      file = file + '.gz'
+    ftps = FTP(site,user,key)
+    ftps.cwd(dir)
+    command='RETR '+file
+    f = open(file, 'wb')
+    print(command)
+    ftps.retrbinary(command,f.write)
+    ftps.quit()
+    f.close()
+# move
+    command = 'mv ' + file  + ' ' + buoy_org_dir
+    os.system(command)
+    fileb,ext = os.path.splitext(file)
+    if (ext == ".gz"):
+     command = 'gunzip ' + buoy_org_dir + file
+     os.system(command)
+
