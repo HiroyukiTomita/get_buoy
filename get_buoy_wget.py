@@ -13,12 +13,12 @@ def get(buoy_category, buoy_id, buoy_year, buoy_org_dir):
       if buoy_id == 'KEO':
        site = 'ftp://ftp.pmel.noaa.gov/keodata/hi_res/'
        command1 = 'wget ' + '-A .ascii -r -nd ' + site
-       command2 = 'mv '  + '*.ascii ' + buoy_org_dir
+       command2 = 'mv '  + '*.ascii ' + buoy_org_dir + '/' + buoy_id
        command3 = ' '
       elif buoy_id == 'PAPA':
        site = 'ftp://ftp.pmel.noaa.gov/papadata/hi_res/'
        command1 = 'wget ' + '-A .ascii -r -nd ' + site
-       command2 = 'mv '  + '*.ascii ' + buoy_org_dir
+       command2 = 'mv '  + '*.ascii ' + buoy_org_dir + '/' + buoy_id
        command3 = ' '
     os.system(command1)
     os.system(command2)
