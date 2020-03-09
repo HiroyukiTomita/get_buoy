@@ -28,3 +28,8 @@ gets surface buoy data for QCS
 - INFO: https://www.pmel.noaa.gov/ocs/
 - FTP: ftp.pmel.noaa.gov
 - FILE: ex. w32n145e_hr.ascii, w50n145w_hr.ascii 
+
+4) WHOI: Ocean Reference Stations: Stratus, NTAS, WHOTS
+- INFO: http://uop.whoi.edu/ReferenceDataSets/index.html
+- WEB: http://uop.whoi.edu/ReferenceDataSets/stratusreference.html
+- FILE: ex. OS_Stratus_200010-201007_D_MLTS-1H.nc
