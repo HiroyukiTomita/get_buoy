@@ -12,6 +12,7 @@ gets surface buoy data for QCS
 - PIRATA 
 - NDBC
 - OCS (ARC, KEO, Papa)
+- WHOI (Stratus, NTAS, WHOTS)
 - OTHERS
 
 ### Data Provider Info.
